@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendify | Attendance Management System</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: #fffdd0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        background-color: rgb(0, 56, 139);
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+      }
+
+      .navbar-brand img {
+        width: 35px;
+        height: 33px;
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+
+      .navbar-brand {
+        font-size: 30px;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      .card {
+        width: 50%;
+        margin: 10% auto;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .navbar-brand {
+          font-size: 2.5vw;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar start -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col" style="margin-top: -10px">
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <img src="{% static 'logo.png' %}" alt="Bootstrap" />
+              Attendify
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- nav bar end -->
+
+    <!-- thank you message -->
+    <div class="card">
+      <div class="row">
+        <div class="col-md-5">
+          <img
+            src="data:image/jpeg;base64,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"
+            class="card-img-top"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h5 class="card-title fs-2" style="margin-top: 10%">
+              Your Leave Request Has Been Submitted.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- thank you message -->
+  </body>
+</html>
